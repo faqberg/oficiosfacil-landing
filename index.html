@@ -72,18 +72,12 @@
       letter-spacing: 0.2px;
     }
 
-    .brand-badge {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--orange), var(--orange-2));
-      display: grid;
-      place-items: center;
-      box-shadow: 0 12px 30px rgba(255,122,0,0.25);
-      color: white;
-      font-size: 20px;
-      font-weight: 900;
-    }
+    .brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
 
     .nav {
       display: flex;
@@ -626,9 +620,9 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <a href="#inicio" class="brand" aria-label="Ir al inicio de OficiosFácil">
-        <span class="brand-badge">O</span>
+        <img src="logo.png" alt="Logo de OficiosFácil" class="brand-logo">
         <span>OficiosFácil</span>
-      </a>
+        </a>
 
       <nav class="nav" aria-label="Principal">
         <a href="#como-funciona">Cómo funciona</a>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gracias | OficiosFácil</title>
+  <meta name="description" content="Gracias por registrarte en OficiosFácil. Recibimos tus datos correctamente." />
+  <meta name="theme-color" content="#ff7a00" />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: rgba(255,255,255,0.06);
+      --text: #f6f7fb;
+      --muted: #b6bcc8;
+      --line: rgba(255,255,255,0.08);
+      --orange: #ff7a00;
+      --orange-2: #ff9a3d;
+      --green: #17c964;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius-xl: 28px;
+      --max: 880px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,122,0,0.22), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.08), transparent 22%),
+        linear-gradient(180deg, #101217 0%, #0b0d12 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: min(100%, var(--max));
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 42px;
+      text-align: center;
+    }
+
+    .icon {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 22px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      font-size: 40px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      box-shadow: 0 14px 34px rgba(255,122,0,0.28);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(23, 201, 100, 0.12);
+      color: #baf5d2;
+      border: 1px solid rgba(23, 201, 100, 0.18);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    p {
+      margin: 0 auto 14px;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.03rem;
+      line-height: 1.6;
+    }
+
+    .actions {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      box-shadow: 0 12px 30px rgba(255,122,0,0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 28px 20px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="icon">✓</div>
+    <div class="eyebrow">Registro enviado correctamente</div>
+
+    <h1>Gracias por sumarte a OficiosFácil</h1>
+
+    <p>
+      Recibimos tus datos correctamente. Tu registro de interés ya fue enviado y quedó cargado para el proceso inicial de incorporación de profesionales.
+    </p>
+
+    <p>
+      Vamos a revisar la información y, si corresponde, podremos contactarte para continuar con los próximos pasos del lanzamiento.
+    </p>
+
+    <p>
+      Mientras tanto, también podés escribirnos por WhatsApp para acelerar el contacto.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="https://wa.me/5491161573864?text=Hola%2C%20ya%20complet%C3%A9%20el%20registro%20en%20OficiosF%C3%A1cil%20y%20quiero%20seguir%20con%20el%20proceso" target="_blank" rel="noopener noreferrer">
+        Hablar por WhatsApp
+      </a>
+      <a class="btn btn-secondary" href="https://faqberg.github.io/oficiosfacil-landing/">
+        Volver al sitio
+      </a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OficiosFácil | Conseguí más trabajos en tu zona</title>
+  <meta name="description" content="Sumate a OficiosFácil como profesional y empezá a recibir solicitudes de clientes reales en tu zona. Buscamos gasistas, electricistas, plomeros e instaladores de aire acondicionado." />
+  <meta name="theme-color" content="#ff7a00" />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: rgba(255,255,255,0.06);
+      --panel-strong: rgba(255,255,255,0.1);
+      --text: #f6f7fb;
+      --muted: #b6bcc8;
+      --line: rgba(255,255,255,0.08);
+      --orange: #ff7a00;
+      --orange-2: #ff9a3d;
+      --green: #17c964;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,122,0,0.22), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.08), transparent 22%),
+        linear-gradient(180deg, #101217 0%, #0b0d12 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(10, 12, 16, 0.7);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
+
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      display: grid;
+      place-items: center;
+      box-shadow: 0 12px 30px rgba(255,122,0,0.25);
+      color: white;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .nav a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      box-shadow: 0 12px 30px rgba(255,122,0,0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .hero {
+      padding: 68px 0 44px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .panel,
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius-xl);
+    }
+
+    .hero-copy {
+      padding: 42px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 240px;
+      height: 240px;
+      background: radial-gradient(circle, rgba(255,122,0,0.16), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,122,0,0.12);
+      color: #ffd3ad;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid rgba(255,122,0,0.18);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+    }
+
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(2.3rem, 4vw, 4.4rem);
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 740px;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-notes {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .note-chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(23, 201, 100, 0.12);
+      color: #baf5d2;
+      font-size: 13px;
+      font-weight: 700;
+      border: 1px solid rgba(23, 201, 100, 0.18);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 6px rgba(23, 201, 100, 0.12);
+    }
+
+    .mini-card {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .section {
+      padding: 34px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 2.2vw, 2.6rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      font-size: 1rem;
+      margin: 0 0 22px;
+    }
+
+    .grid-4,
+    .grid-3,
+    .grid-2 {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+    .card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 14px;
+      background: linear-gradient(135deg, rgba(255,122,0,0.18), rgba(255,255,255,0.08));
+      border: 1px solid rgba(255,122,0,0.18);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .card li,
+    .panel p,
+    .faq-answer,
+    .list li {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .list {
+      padding-left: 18px;
+      margin: 10px 0 0;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      position: relative;
+      padding: 22px 22px 22px 78px;
+      border-radius: var(--radius-lg);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--orange), var(--orange-2));
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 10px 24px rgba(255,122,0,0.25);
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .highlight {
+      color: white;
+      font-weight: 700;
+    }
+
+    .two-col-feature {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .panel {
+      padding: 28px;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--line);
+      padding: 18px 0;
+    }
+
+    .faq-item:first-child { border-top: 0; padding-top: 0; }
+
+    .faq-question {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .form-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .form-card {
+      padding: 28px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 14px;
+      color: #e8ebf2;
+      font-weight: 600;
+    }
+
+    input,
+        select,
+        textarea {
+        width: 100%;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid var(--line);
+        color: #ffffff;
+        border-radius: 14px;
+        padding: 14px 16px;
+        }
+
+        select option {
+        color: #000000;
+        background: #ffffff;
+        }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #8e97a8;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(255,122,0,0.55);
+      background: rgba(255,255,255,0.075);
+    }
+
+    textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .helper {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 6px 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .check-row input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--orange);
+    }
+
+    .submit-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .small-note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      padding: 26px 0 50px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-box {
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .mobile-cta {
+      display: none;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .two-col-feature,
+      .form-wrap,
+      .grid-4,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .stats { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .nav { display: none; }
+
+      .hero {
+        padding-top: 36px;
+      }
+
+      .hero-copy,
+      .hero-card,
+      .panel,
+      .form-card,
+      .card,
+      .step {
+        padding: 22px;
+      }
+
+      .form-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+
+      .topbar-inner {
+        padding: 12px 0;
+      }
+
+      .mobile-cta {
+        position: fixed;
+        left: 16px;
+        right: 16px;
+        bottom: 16px;
+        z-index: 30;
+        display: block;
+      }
+
+      .mobile-cta .btn {
+        width: 100%;
+      }
+
+      body {
+        padding-bottom: 82px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#inicio" class="brand" aria-label="Ir al inicio de OficiosFácil">
+        <span class="brand-badge">O</span>
+        <span>OficiosFácil</span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#profesiones">Profesiones</a>
+        <a href="#registro">Registro</a>
+      </nav>
+
+      <a class="btn btn-primary" href="#registro">Quiero sumarme</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Lanzamiento inicial para profesionales</span>
+          <h1>Conseguí más trabajos en tu zona con <span style="color: var(--orange-2);">OficiosFácil</span></h1>
+          <p class="lead">
+            OficiosFácil es una app pensada para conectar <strong>clientes que necesitan resolver trabajos del hogar</strong>
+            con <strong>profesionales confiables</strong>. En esta primera etapa estamos incorporando
+            <strong>gasistas, electricistas, plomeros e instaladores de aire acondicionado</strong>
+            para salir al mercado con una base sólida de profesionales reales.
+          </p>
+          <p class="lead">
+            La idea es simple: el cliente publica lo que necesita, los profesionales reciben la oportunidad,
+            envían su propuesta y, si son elegidos, realizan el trabajo. Todo desde una plataforma ordenada,
+            moderna y pensada para generar más oportunidades de trabajo.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#registro" class="btn btn-primary">Registrarme como profesional</a>
+            <a href="#como-funciona" class="btn btn-secondary">Ver cómo funciona</a>
+          </div>
+
+          <div class="hero-notes">
+            <span class="note-chip">Registro de interés sin costo</span>
+            <span class="note-chip">Orientado al lanzamiento inicial</span>
+            <span class="note-chip">Enfoque en profesionales reales y serios</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Resumen del servicio">
+          <div class="hero-card-top">
+            <strong style="font-size: 1.15rem;">Etapa de incorporación</strong>
+            <span class="status"><span class="status-dot"></span> Abierta</span>
+          </div>
+
+          <div class="mini-card">
+            <strong>¿Qué es OficiosFácil?</strong>
+            <p>
+              Una app para que profesionales de oficios reciban oportunidades de trabajo de personas que necesitan
+              resolver instalaciones, reparaciones y servicios en su casa o negocio.
+            </p>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <b>4</b>
+              <span>oficios activos en esta primera etapa</span>
+            </div>
+            <div class="stat">
+              <b>100%</b>
+              <span>enfocado en captar profesionales para el lanzamiento</span>
+            </div>
+            <div class="stat">
+              <b>1</b>
+              <span>registro simple para empezar el contacto</span>
+            </div>
+          </div>
+
+          <div class="mini-card">
+            <strong>¿Por qué anotarte ahora?</strong>
+            <p>
+              Porque estamos armando la primera base de profesionales de la app. Quienes se sumen en esta etapa
+              van a estar mejor posicionados para participar del lanzamiento inicial.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="profesiones">
+      <div class="container">
+        <h2 class="section-title">Profesiones que estamos incorporando</h2>
+        <p class="section-subtitle">
+          En esta primera versión de OficiosFácil estamos enfocados en rubros con alta demanda real.
+          La convocatoria actual está orientada a profesionales que trabajen en alguna de estas categorías.
+        </p>
+
+        <div class="grid-4">
+          <article class="card">
+            <div class="icon">🔥</div>
+            <h3>Gasistas</h3>
+            <p>
+              Instalaciones, reparaciones, revisiones, calefones, termotanques, cocinas, pérdidas y trabajos vinculados a gas.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">⚡</div>
+            <h3>Electricistas</h3>
+            <p>
+              Reparaciones eléctricas, tableros, cableado, cortocircuitos, iluminación, tomas, térmicas y trabajos domiciliarios.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🚰</div>
+            <h3>Plomeros</h3>
+            <p>
+              Pérdidas, cañerías, desagües, grifería, sanitarios, instalaciones y todo tipo de trabajos de plomería.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">❄️</div>
+            <h3>Aire acondicionado</h3>
+            <p>
+              Instalación, desinstalación, mantenimiento, limpieza, recarga y diagnóstico de equipos de aire acondicionado.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <h2 class="section-title">Cómo funciona la app para el profesional</h2>
+        <p class="section-subtitle">
+          OficiosFácil busca ordenar el proceso completo, desde que aparece una oportunidad hasta que el trabajo se concreta.
+          El objetivo es que el profesional tenga un sistema claro para recibir más posibilidades laborales y administrar mejor su actividad.
+        </p>
+
+        <div class="steps">
+          <article class="step">
+            <h3>Te registrás y dejás tus datos</h3>
+            <p>
+              Completás tu información básica: nombre, oficio, zona, teléfono y experiencia. Con eso armamos la base inicial de profesionales.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Entrás a la app y configurás tu perfil</h3>
+            <p>
+              Una vez incorporado, el profesional puede contar con un perfil donde se reflejan sus datos, su actividad y su participación dentro de la plataforma.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Recibís trabajos de clientes</h3>
+            <p>
+              Los clientes publican necesidades reales. El sistema permite que los profesionales compatibles con ese rubro puedan ver oportunidades y participar.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Enviás tu propuesta</h3>
+            <p>
+              Como profesional, podés presentar una propuesta para el trabajo publicado, compitiendo por ser elegido de manera ordenada y transparente.
+            </p>
+          </article>
+
+          <article class="step">
+            <h3>Si el cliente te elige, hacés el trabajo</h3>
+            <p>
+              Una vez aceptada tu propuesta, continúa la coordinación desde la app. El objetivo es facilitar la gestión y dar una experiencia seria para ambas partes.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios">
+      <div class="container two-col-feature">
+        <div class="panel">
+          <h2 class="section-title">Qué busca resolver OficiosFácil</h2>
+          <p class="section-subtitle" style="margin-bottom: 0;">
+            Muchos profesionales consiguen trabajos de forma desordenada: recomendaciones aisladas, publicaciones dispersas,
+            WhatsApp, Facebook o avisos sueltos. Del otro lado, muchísima gente necesita resolver un problema en su casa y no sabe
+            a quién llamar o en quién confiar.
+          </p>
+          <p>
+            OficiosFácil nace para unir esas dos necesidades en un mismo lugar: clientes que necesitan resolver un trabajo y profesionales
+            que quieren <span class="highlight">más visibilidad, más oportunidades y una forma más organizada de recibir trabajo</span>.
+          </p>
+          <div class="pill-list">
+            <span class="pill">Más oportunidades</span>
+            <span class="pill">Mayor visibilidad</span>
+            <span class="pill">Proceso más ordenado</span>
+            <span class="pill">Perfil profesional</span>
+            <span class="pill">Participación desde el inicio</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="section-title">Beneficios para profesionales</h2>
+          <ul class="list">
+            <li>Acceder a una app enfocada específicamente en conectar oficios con clientes.</li>
+            <li>Tener presencia en una plataforma moderna desde su etapa inicial.</li>
+            <li>Participar del lanzamiento con posibilidad de quedar mejor posicionado desde el comienzo.</li>
+            <li>Recibir oportunidades relacionadas con su rubro.</li>
+            <li>Mostrar profesionalismo dentro de una experiencia más ordenada que depender solo del boca en boca.</li>
+            <li>Formar parte de una base inicial de profesionales reales y activos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="porque-sumarte">
+      <div class="container">
+        <h2 class="section-title">Por qué conviene sumarte ahora</h2>
+        <p class="section-subtitle">
+          Esta landing no está orientada al público general. Está enfocada 100% en profesionales porque la prioridad del lanzamiento
+          es construir primero una base sólida de oferta. La idea es salir al mercado con suficientes profesionales activos en cada rubro,
+          para que cuando lleguen los clientes la app ya tenga vida real.
+        </p>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">🚀</div>
+            <h3>Etapa fundacional</h3>
+            <p>
+              Los primeros profesionales son clave. Sumarte ahora te pone dentro del grupo inicial que va a acompañar el lanzamiento de la plataforma.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📍</div>
+            <h3>Presencia desde el día uno</h3>
+            <p>
+              Cuando la app empiece a incorporar más clientes, ya vas a estar adentro del ecosistema y no entrando tarde cuando todo esté más competitivo.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🤝</div>
+            <h3>Construcción de una red real</h3>
+            <p>
+              No buscamos perfiles vacíos. Queremos profesionales serios, activos y con ganas de formar parte de un sistema pensado para generar trabajo.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container grid-2">
+        <div class="panel">
+          <h2 class="section-title">Preguntas frecuentes</h2>
+
+          <div class="faq-item">
+            <div class="faq-question">¿OficiosFácil ya está abierta al público?</div>
+            <div class="faq-answer">
+              Está en etapa de incorporación de profesionales para preparar el lanzamiento. Primero queremos construir una base fuerte de profesionales reales.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">¿Quiénes pueden registrarse?</div>
+            <div class="faq-answer">
+              Por ahora estamos incorporando gasistas, electricistas, plomeros e instaladores de aire acondicionado.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">¿Qué pasa después de dejar mis datos?</div>
+            <div class="faq-answer">
+              Tus datos quedan registrados para el proceso inicial de incorporación. Luego podremos contactarte para continuar con los siguientes pasos.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">¿Puedo anotarme aunque todavía no use la app?</div>
+            <div class="faq-answer">
+              Sí. Justamente esta etapa busca reunir profesionales interesados antes de ampliar la llegada al público general.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2 class="section-title">La propuesta en una frase</h2>
+          <p>
+            <strong>OficiosFácil</strong> quiere convertirse en el lugar donde un cliente encuentra a un profesional y donde un profesional encuentra más oportunidades de trabajo.
+          </p>
+          <p>
+            Esta landing está pensada para explicarlo de manera clara y para que puedas dejar tus datos como profesional interesado.
+          </p>
+          <p>
+            Si trabajás en alguno de los rubros activos y te interesa formar parte de una plataforma moderna, seria y orientada a conectar demanda real con trabajo real,
+            podés registrarte ahora mismo.
+          </p>
+          <div class="hero-actions" style="margin-top: 18px;">
+            <a href="#registro" class="btn btn-primary">Completar registro</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="registro">
+      <div class="container form-wrap">
+        <div class="panel">
+          <h2 class="section-title">Registro de interés para profesionales</h2>
+          <p class="section-subtitle">
+            Completá este formulario para postularte como profesional interesado en formar parte de OficiosFácil.
+            En esta etapa buscamos reunir la primera base de profesionales de la app.
+          </p>
+
+          <ul class="list">
+            <li>El formulario está orientado a la etapa inicial de incorporación.</li>
+            <li>Mientras más completa sea tu información, mejor.</li>
+            <li>Los campos se pueden adaptar fácilmente a tu necesidad.</li>
+            <li>Podés usar este mismo HTML gratis y publicarlo tal cual.</li>
+          </ul>
+
+          <div class="pill-list">
+            <span class="pill">Gasista</span>
+            <span class="pill">Electricista</span>
+            <span class="pill">Plomero</span>
+            <span class="pill">Aire acondicionado</span>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form action="https://formsubmit.co/fbsoftw@GMAIL.COM" method="POST">
+            <input type="hidden" name="_subject" value="Nuevo registro profesional - OficiosFácil">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="nombre">Nombre y apellido</label>
+                <input id="nombre" name="Nombre y apellido" type="text" placeholder="Ej: Juan Pérez" required>
+              </div>
+
+              <div class="field">
+                <label for="telefono">Teléfono / WhatsApp</label>
+                <input id="telefono" name="Teléfono" type="tel" placeholder="Ej: 11 2345 6789" required>
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" placeholder="Ej: juan@gmail.com" required>
+              </div>
+
+              <div class="field">
+                <label for="oficio">Oficio principal</label>
+                <select id="oficio" name="Oficio principal" required>
+                  <option value="" selected disabled>Seleccionar</option>
+                  <option>Gasista</option>
+                  <option>Electricista</option>
+                  <option>Plomero</option>
+                  <option>Instalador de aire acondicionado</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="zona">Zona donde trabajás</label>
+                <input id="zona" name="Zona" type="text" placeholder="Ej: CABA, Zona Sur, Zona Norte" required>
+              </div>
+
+              <div class="field">
+                <label for="experiencia">Años de experiencia</label>
+                <input id="experiencia" name="Experiencia" type="text" placeholder="Ej: 8 años" required>
+              </div>
+
+              <div class="field">
+                <label for="matricula">¿Tenés matrícula?</label>
+                <select id="matricula" name="Matrícula" required>
+                  <option value="" selected disabled>Seleccionar</option>
+                  <option>Sí</option>
+                  <option>No</option>
+                  <option>Depende del trabajo</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="disponibilidad">Disponibilidad general</label>
+                <select id="disponibilidad" name="Disponibilidad" required>
+                  <option value="" selected disabled>Seleccionar</option>
+                  <option>Tiempo completo</option>
+                  <option>Media jornada</option>
+                  <option>Trabajos puntuales</option>
+                  <option>Solo fines de semana</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="detalle">Contanos un poco sobre vos</label>
+                <textarea id="detalle" name="Descripción profesional" placeholder="Ej: Hace 10 años trabajo como electricista domiciliario, hago instalaciones, tableros, mantenimiento y urgencias."></textarea>
+                <div class="helper">Podés contar experiencia, tipo de trabajos que hacés, zonas, horarios o cualquier dato útil.</div>
+              </div>
+            </div>
+
+            <label class="check-row" for="acepto">
+              <input id="acepto" type="checkbox" required>
+              <span>Acepto que mis datos sean utilizados para ser contactado en el marco del proceso inicial de incorporación a OficiosFácil.</span>
+            </label>
+
+            <div class="submit-row">
+              <button type="submit" class="btn btn-primary">Enviar registro</button>
+              <a href="https://wa.me/5491161573864?text=Hola%2C%20quiero%20sumarme%20como%20profesional%20a%20OficiosF%C3%A1cil" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+            </div>
+
+            <!-- <p class="small-note">
+              Importante: cambiá <strong>TUEMAIL@GMAIL.COM</strong> por tu email real para que el formulario te llegue.
+              También reemplazá <strong>https://tusitio.com/gracias.html</strong> por la URL de tu página de gracias o borrá esa línea si no la vas a usar todavía.
+            </p> -->
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box">
+      <div>
+        <strong style="color: white;">OficiosFácil</strong><br>
+        Plataforma orientada a conectar profesionales con oportunidades reales de trabajo.
+      </div>
+      <div>
+        Esta página está enfocada en la incorporación inicial de profesionales para el lanzamiento.
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta">
+    <a href="#registro" class="btn btn-primary">Registrarme ahora</a>
+  </div>
+</body>
+</html>
